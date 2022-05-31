@@ -10,7 +10,9 @@ describe Svg do
 
   it "has a path in the SVG file" do
     svg = Nokogiri::XML(Svg.new.svg)
-    path = svg.xpath(".//path")
+    path = svg.at_xpath("//path")
+
+    expect(path).not_to be_nil
   end
 
   context "spline" do
