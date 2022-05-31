@@ -1,8 +1,8 @@
 class Svg
-  WIDTH=200
-  HEIGHT=200
-  CENTRE_X=WIDTH/2
-  CENTRE_Y=HEIGHT/2
+  WIDTH = 200
+  HEIGHT = 200
+  CENTRE_X = WIDTH / 2
+  CENTRE_Y = HEIGHT / 2
 
   def initialize
     set_colours
@@ -35,7 +35,7 @@ class Svg
 
     d = spline(points)
     <<~PATH
-    <path d="#{d}" stroke="#{@dark_colour}" stroke-width="2" fill="#{@primary_colour}" />
+      <path d="#{d}" stroke="#{@dark_colour}" stroke-width="2" fill="#{@primary_colour}" />
     PATH
   end
 
@@ -99,7 +99,7 @@ class Svg
       cp2x = x2 - ((x3 - x1) / 6)
       cp2y = y2 - ((y3 - y1) / 6)
 
-      path += " C" + [cp1x, cp1y, cp2x, cp2y, x2, y2].join(",");
+      path += " C" + [cp1x, cp1y, cp2x, cp2y, x2, y2].join(",")
     end
 
     path
