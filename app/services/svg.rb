@@ -10,7 +10,7 @@ class Svg
 
   def svg
     <<~SVG
-      <svg class="canvas" viewBox="0 0 #{HEIGHT} #{WIDTH}" style="background: #{@light_colour}">
+      <svg xmlns="http://www.w3.org/2000/svg" class="canvas" viewBox="0 0 #{HEIGHT} #{WIDTH}" style="background: #{@light_colour}">
       #{draw_body}
       #{draw_eyes}
       </svg>
