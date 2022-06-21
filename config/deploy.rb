@@ -5,7 +5,7 @@ set :application, "miniblob"
 set :repo_url, "git@github.com:mgriffin/miniblob.git"
 
 # Default branch is :master
-###ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+# ##ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :branch, :main
 
 # Default deploy_to directory is /var/www/my_app_name
@@ -26,7 +26,7 @@ set :branch, :main
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
-append :linked_dirs, '.bundle'
+append :linked_dirs, ".bundle"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -41,12 +41,12 @@ append :linked_dirs, '.bundle'
 # set :ssh_options, verify_host_key: :secure
 
 set :ssh_options, {
-  :keys => [File.join(ENV["HOME"], ".ssh", "id_rsa_miniblob")],
+  keys: [File.join(ENV["HOME"], ".ssh", "id_rsa_miniblob")]
 }
 
 set :rbenv_type, :user
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_map_bins, %w[rake gem bundle ruby rails]
 set :rbenv_roles, :production
 
 set :puma_enable_socket_service, true
