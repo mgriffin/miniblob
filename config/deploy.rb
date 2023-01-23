@@ -40,9 +40,9 @@ append :linked_dirs, ".bundle"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-set :ssh_options, {
-  keys: [File.join(ENV["HOME"], ".ssh", "id_rsa_miniblob")]
-}
+#set :ssh_options, {
+#  keys: [File.join(ENV["HOME"], ".ssh", "id_rsa_miniblob")]
+#}
 
 set :rbenv_type, :user
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
@@ -51,6 +51,7 @@ set :rbenv_roles, :production
 
 set :puma_enable_socket_service, true
 set :puma_service_unit_name, "puma_miniblob_mikegriffin_ie_production"
+set :puma_systemctl_user, :system
 
 append :linked_files, "config/master.key"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "public/uploads"
