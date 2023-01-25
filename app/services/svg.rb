@@ -76,8 +76,8 @@ class Svg
       # get the previous point
       # if this is the first point then we have to get the last one
       # from the original points array
-      x0 = i == 0 ? points.last[:x] : extended[i - 1][:x]
-      y0 = i == 0 ? points.last[:y] : extended[i - 1][:y]
+      x0 = (i == 0) ? points.last[:x] : extended[i - 1][:x]
+      y0 = (i == 0) ? points.last[:y] : extended[i - 1][:y]
 
       # this is the current point
       x1 = p[:x]
@@ -89,8 +89,8 @@ class Svg
 
       # this is a point two in the future and is the reason we added the first
       # two points to the end of the array earlier
-      x3 = i == (extended.size - 1) ? extended.first[:x] : extended[i + 2][:x]
-      y3 = i == (extended.size - 1) ? extended.first[:y] : extended[i + 2][:y]
+      x3 = (i == (extended.size - 1)) ? extended.first[:x] : extended[i + 2][:x]
+      y3 = (i == (extended.size - 1)) ? extended.first[:y] : extended[i + 2][:y]
 
       # calculate the control points
       cp1x = x1 + ((x2 - x0) / 6)
