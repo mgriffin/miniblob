@@ -4,13 +4,13 @@ require_relative "../../app/services/svg"
 describe Svg do
   it "returns an SVG file" do
     svg = Nokogiri::XML(Svg.new.svg)
-    viewbox = svg.xpath(".//svg").attr("viewBox").value
+    viewbox = svg.css("svg").attr("viewBox").value
     expect(viewbox).to eq("0 0 200 200")
   end
 
   it "has a path in the SVG file" do
     svg = Nokogiri::XML(Svg.new.svg)
-    path = svg.at_xpath("//path")
+    path = svg.css("path")
 
     expect(path).not_to be_nil
   end
