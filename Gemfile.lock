@@ -187,14 +187,14 @@ GEM
       logger
       openssl (>= 3.2.0)
     nio4r (2.7.5)
-    nokogiri (1.19.4)
+    nokogiri (1.19.5)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.19.4-arm64-darwin)
+    nokogiri (1.19.5-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.4-x86_64-darwin)
+    nokogiri (1.19.5-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.4-x86_64-linux-gnu)
+    nokogiri (1.19.5-x86_64-linux-gnu)
       racc (~> 1.4)
     openssl (4.0.2)
     ostruct (0.6.3)
@@ -389,7 +389,7 @@ DEPENDENCIES
   debug
   ed25519
   jbuilder
-  nokogiri (= 1.19.4)
+  nokogiri (= 1.19.5)
   puma (~> 8.0)
   rails (~> 8.0)
   rspec-rails (~> 8.0.0)
